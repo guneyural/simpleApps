@@ -1,3 +1,3 @@
 # Eglencesine
 yaptigim seker mi seker siteler
-![alt text](/home/guney/Pictures/Screenshots/Screenshot from 2019-06-03 10.05.00.png)
+![alt text](file:///home/guney/Pictures/Screenshots/Screenshot%20from%202019-06-03%2010.05.00.png)
