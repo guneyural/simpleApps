@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Goa Madness Records</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<body>
+	<div class="container">
+		<h1><span id="Player1">0</span> to <span id="Player2">0</span></h1>
+		<p>Rounds: <span id="HedefScore">5</span></p>
+		<input id="yaziAlani" type="number" class="form-control" placeholder="Increase the rounds and hit enter">
+		<button class="btn btn-primary border rounded" id="Player1Art">Player One</button>
+		<button class="btn btn-success border rounded" id="Player2Art">Player Two</button>
+		<button class="btn btn-danger border rounded" id="reset">Reset</button>
+	</div>
+	<script>
+		var oyuncu1 = document.getElementById("Player1");
+		var oyuncu1Deger = document.getElementById("Player1").textContent;
+		var oyuncu2 = document.getElementById("Player2");
+		var oyuncu2Deger = document.getElementById("Player2").textContent;
+		var hedef = document.getElementById("HedefScore");
+		var hedefDeger = document.getElementById("HedefScore").textContent;
+		var oyuncu1Art = document.getElementById("Player1Art");
+		var oyuncu2Art = document.getElementById("Player2Art");
+		var reset = document.getElementById("reset");
+		var yaziAlani = document.getElementById("yaziAlani");
+		var yaziAlaniD = document.getElementById("yaziAlani").value;
+		var oyuncu1Sayilar=0; 
+		var oyuncu2Sayilar=0;
+		if(yaziAlani.value < 1){
+			yaziAlaniD=5;
+			yaziAlani.value= yaziAlaniD;
+
+		}
+		oyuncu1Art.addEventListener("click",()=>{
+			oyuncu1Sayilar++;
+			oyuncu1.textContent = oyuncu1Sayilar;
+			if(oyuncu1Sayilar == hedefDeger){
+				oyuncu1Art.disabled=true;
+				oyuncu2Art.disabled=true;
+				oyuncu1.style.color="green";
+				oyuncu2.style.color="red";
+			}
+			console.log(oyuncu1sayilar);
+		});
+		oyuncu2Art.addEventListener("click",()=>{
+			oyuncu2Sayilar++;
+			oyuncu2.textContent = oyuncu2Sayilar;
+			if(oyuncu2Sayilar == hedefDeger){
+				oyuncu1Art.disabled=true;
+				oyuncu2Art.disabled=true;
+				oyuncu2.style.color="green";
+				oyuncu1.style.color="red";
+			}
+		});
+		reset.addEventListener("click",()=>{
+			oyuncu1Art.disabled=false;
+			oyuncu2Art.disabled=false;
+			oyuncu1.textContent=0;
+			oyuncu2.textContent=0;
+			oyuncu2Sayilar=0;
+			oyuncu1Sayilar=0;
+			oyuncu1.style.color="black";
+			oyuncu2.style.color="black";
+		});
+		yaziAlani.addEventListener("keyup",(event)=>{
+			if(event.keyCode === 13){
+				hedefDeger = yaziAlani.value;
+				hedef.textContent = hedefDeger; 
+			}
+		});
+	</script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
