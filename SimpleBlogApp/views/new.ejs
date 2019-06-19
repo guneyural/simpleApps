@@ -1,0 +1,16 @@
+<% include partials/header.ejs %>
+<div class="container">
+	<div class="border mt-5 rounded shadow p-3 mb-5" id="blogOlustur">
+		<h1 class="display-4">New Blog</h1>
+		<form action="/blogs" method="POST">
+			<label for="alanBaslik"><strong>Title<strong></label>
+			<input type="text" name="title" id="alanBaslik" class="form-control mb-3" placeholder="title" required>
+			<label for="alanResim"><strong>Image URL<strong></label>
+			<input type="text" id= "alanResim" name="image" class="form-control mb-3" placeholder="image" required>
+			<label for="exampleFormControlTextarea1"><strong>Blog Content</strong></label>
+			<textarea class="form-control mb-3" name="body" id="exampleFormControlTextarea1" rows="4" required></textarea>
+			<input value="Create Blog" type="submit" style="width: 35%" class="btn btn-success">
+		</form>
+	</div>
+</div>
+<% include partials/footer.ejs %>
